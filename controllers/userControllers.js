@@ -15,7 +15,7 @@ const register = async (req, res, next) => {
       next(error);
     }
 
-    const user = { name, email, password, role };
+    const user = { name, phone, email, password, role };
     const newUser = User(user);
     await newUser.save();
 
