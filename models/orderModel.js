@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
 
 const orderSchema = new mongoose.Schema(
   {
@@ -22,6 +21,10 @@ const orderSchema = new mongoose.Schema(
       totalWithTax: { type: Number, required: true },
     },
     items: [],
+    table: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Table",
+    },
   },
   { timestamps: true }
 );
